@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8ef">
+  <title>Clean &amp; Relax</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell home-active">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Clean and Relax home" id="home-link"><span class="brand-mark">✿</span> clean <i>&amp;</i> relax</a>
+      <div class="topbar-actions">
+        <div class="sound-controls" aria-label="Sound controls">
+          <button class="sound-button" id="sound-toggle" type="button" aria-label="Turn sound off" title="Sound on">🔊</button>
+          <label class="volume-control" title="Volume">
+            <span>♪</span>
+            <input id="volume-control" type="range" min="0" max="100" value="55" aria-label="Volume">
+          </label>
+        </div>
+        <div class="score-pill" aria-live="polite"><span class="score-star">✦</span><span id="score">0</span><small>points</small></div>
+      </div>
+    </header>
+
+    <section class="screen home-screen" id="home-screen" aria-labelledby="home-title">
+      <h1 id="home-title" class="visually-hidden">Clean &amp; Relax</h1>
+      <div class="cover-art">
+        <img class="cover-image" src="uploads/ChatGPT_Image_2026_10_1__01_47_43.png" alt="Clean & Relax cover: a cozy pastel cartoon girl with a cat and duck, sparkles, and a pink START button">
+        <button class="cover-start" id="start-button" aria-label="Start Clean and Relax"></button>
+      </div>
+    </section>
+
+    <section class="screen game-screen hidden" id="game-screen" aria-labelledby="level-title">
+      <div class="game-heading">
+        <button class="back-button" id="back-button" aria-label="Back to home">←</button>
+        <div><p class="eyebrow" id="level-kicker">LITTLE RESET · LEVEL 1</p><h1 id="level-title">Face cleaning</h1></div>
+        <div class="level-dots" aria-label="Level 1 of 2"><span class="active"></span><span></span></div>
+      </div>
+      <div class="progress-wrap"><div class="progress-meta"><span>Freshness</span><strong id="progress-label">0 / 6</strong></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div><span class="progress-sparkle">✦</span></div></div>
+      <div class="stage" id="stage">
+        <div class="stage-orbit orbit-one"></div><div class="stage-orbit orbit-two"></div>
+        <div class="stage-label" id="stage-label">a little face refresh <span>☁</span></div>
+        <div class="face-scene" id="face-scene" aria-label="Cute cartoon face with spots to clean">
+          <div class="face-hair-back"></div><div class="face-neck"></div><div class="face-ear ear-left"></div><div class="face-ear ear-right"></div>
+          <div class="face-head"><div class="face-fringe"></div><span class="face-eye eye-left"></span><span class="face-eye eye-right"></span><span class="face-cheek cheek-left"></span><span class="face-cheek cheek-right"></span><span class="face-nose"></span><span class="face-mouth"></span></div>
+          <button class="target pimple p1" aria-label="Clean spot 1"><i></i></button><button class="target pimple p2" aria-label="Clean spot 2"><i></i></button><button class="target pimple p3" aria-label="Clean spot 3"><i></i></button><button class="target pimple p4" aria-label="Clean spot 4"><i></i></button><button class="target pimple p5" aria-label="Clean spot 5"><i></i></button><button class="target pimple p6" aria-label="Clean spot 6"><i></i></button>
+        </div>
+        <div class="ear-scene hidden" id="ear-scene" aria-label="Cute cartoon ear with dirt spots to clean">
+          <div class="ear-halo"></div><div class="ear-outer"><div class="ear-inner"><div class="ear-fold fold-one"></div><div class="ear-fold fold-two"></div><div class="ear-canal"></div><div class="ear-lobe"></div></div></div>
+          <button class="target dirt d1" aria-label="Clean dirt spot 1"><i></i></button><button class="target dirt d2" aria-label="Clean dirt spot 2"><i></i></button><button class="target dirt d3" aria-label="Clean dirt spot 3"><i></i></button><button class="target dirt d4" aria-label="Clean dirt spot 4"><i></i></button><button class="target dirt d5" aria-label="Clean dirt spot 5"><i></i></button>
+        </div>
+        <div class="sparkle-layer" id="sparkle-layer" aria-hidden="true"></div>
+        <div class="complete-card hidden" id="complete-card"><div class="complete-icon">✦</div><p class="eyebrow">THAT FEELS BETTER</p><h2>Cleaning complete!</h2><p id="complete-copy">Look at that lovely glow.</p><button class="button button-primary" id="next-button">Next level <span>→</span></button></div>
+        <div class="hint-chip" id="hint-chip"><span>✧</span> tap each little spot</div>
+      </div>
+      <p class="game-footnote" id="game-footnote"><span>♡</span> Nice and easy. Take your time.</p>
+    </section>
+    <div class="toast" id="toast" aria-live="polite"></div>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
